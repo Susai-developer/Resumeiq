@@ -1,6 +1,6 @@
 /**
  * ============================================================
- * SPOTIFY WEB PLAYER - MAIN JAVASCRIPT ENGINE
+ * AROKIYAM WEB PLAYER - MAIN JAVASCRIPT ENGINE
  * ============================================================
  */
 
@@ -173,6 +173,97 @@ const playlistData = {
         { time: 242, text: "அருள்மழை பொழியும் அன்பின் தாயே" },
         { time: 265, text: "ஆரோக்கிய தாயே அம்மா அம்மா..." }
       ]
+    },
+    {
+      id: 6,
+      title: "Matha Un Kovilil",
+      tamilTitle: "மாதா உன் கோவிலில் மணிதீபம்",
+      artist: "Catholic Marian Devotional",
+      album: "Velankanni Special",
+      cover: "assets/cover6.svg",
+      color: "#581c87", // Deep Royal Amethyst
+      duration: 290,
+      durationStr: "4:50",
+      dateAdded: "Just now",
+      url: "https://res.cloudinary.com/b4venwst/video/upload/v1795092137/Matha_Un_Kovilil_128k.mp3",
+      localUrl: "songs/Matha_Un_Kovilil_128k.mp3",
+      lyrics: [
+        { time: 0, text: "மாதா உன் கோவிலில் மணிதீபம் ஏற்றினேன்..." },
+        { time: 14, text: "Matha un kovilil manidheepam yetrinen" },
+        { time: 28, text: "தாய் என்று உன்னைத் தான் பிள்ளைக்குக் காட்டினேன்" },
+        { time: 44, text: "Thai endru unnaithaan pillaikku kaattinen" },
+        { time: 60, text: "மாதா ஆரோக்கிய மாதா..." },
+        { time: 76, text: "மேய்ப்பன் இல்லாத மந்தை வழிமாறுமே" },
+        { time: 94, text: "Meyppan illatha manthai vazhimaarume" },
+        { time: 114, text: "மேரி உன் ஜோதி கொண்டால் விதிமாறுமே" },
+        { time: 134, text: "Mary un jyothi kondaal vidhimaarume" },
+        { time: 154, text: "மெழுகுபோல் உருகினோம் கண்ணீரை மாற்ற வா" },
+        { time: 176, text: "Mezhugupol uruginom kanneerai maatra vaa" },
+        { time: 198, text: "மாதா உன் கோவிலில் மணிதீபம் ஏற்றினேன்" },
+        { time: 220, text: "அருள்தரும் திருச்சபை மணியோசை கேட்குமோ" },
+        { time: 242, text: "அன்னை இல்லாத மகனைத் தாலாட்டுது" },
+        { time: 265, text: "மாதா உன் கோவிலில் மணிதீபம் ஏற்றினேன்..." }
+      ]
+    },
+    {
+      id: 7,
+      title: "Kathum Alaikadal",
+      tamilTitle: "கத்தும் அலைகடல் ஓரத்திலே",
+      artist: "Catholic Musing",
+      album: "Alaikadal Matha",
+      cover: "assets/cover7.svg",
+      color: "#0f766e", // Oceanic Deep Teal
+      duration: 240,
+      durationStr: "4:00",
+      dateAdded: "Just now",
+      url: "https://res.cloudinary.com/b4venwst/video/upload/v1795092131/%E0%AE%95%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AF%81%E0%AE%AE%E0%AF%8D_%E0%AE%85%E0%AE%B2%E0%AF%88%E0%AE%95%E0%AE%9F%E0%AE%B2%E0%AF%8D___Kathum_Alaikadal___Catholic_Musing_128k.mp3",
+      localUrl: "songs/கத்தும்_அலைகடல்___Kathum_Alaikadal___Catholic_Musing_128k.mp3",
+      lyrics: [
+        { time: 0, text: "அன்று சிலுவையிலே நீ சிந்திய கண்ணீர்..." },
+        { time: 15, text: "Anru siluvayile nee sinthiya kanneer" },
+        { time: 30, text: "இன்று புவியெல்லாம் நீள்கடலாய் ஆனதம்மா" },
+        { time: 46, text: "கத்தும் அலைகடல் ஓரத்திலே அன்புத்தாங்கியே வந்தவளே" },
+        { time: 64, text: "Kathum alaikadal orathile anbuthaangiye vanthavale" },
+        { time: 82, text: "சித்தம் இரங்கியே வேளைநகர் வந்தே ஆரோக்கியம் தந்தவளே அம்மா" },
+        { time: 102, text: "Siththam irangiye velainagar vanthe aarokkiyam thanthavale" },
+        { time: 122, text: "வித்தகன் இயேசுவைப் பெற்றவள் நீயே" },
+        { time: 140, text: "உத்தமர்க்கெல்லாம் நீ உற்றவள் தாயே" },
+        { time: 160, text: "சத்திய சன்மார்க்கம் தழைக்கச் செய்தாயே" },
+        { time: 180, text: "இத்தரை மேல் இன்னல் தீர்ப்பவள் நீயே" },
+        { time: 200, text: "நித்தம் உன் தாள் தேடி வருவார்கள் கோடி" },
+        { time: 220, text: "கத்தும் அலைகடல் ஓரத்திலே அன்புத்தாங்கியே வந்தவளே..." }
+      ]
+    },
+    {
+      id: 8,
+      title: "Manasellam Mella Mella",
+      tamilTitle: "மனசெல்லாம் மெல்ல மெல்ல",
+      artist: "Fr. G.V. Panneer Selvam",
+      album: "Song on Virgin Mary",
+      cover: "assets/cover8.svg",
+      color: "#1d4ed8", // Celestial Sapphire Blue
+      duration: 273,
+      durationStr: "4:33",
+      dateAdded: "Just now",
+      url: "https://res.cloudinary.com/b4venwst/video/upload/v1795092308/Manasellam_mella_mella___%E0%AE%AE%E0%AE%A9%E0%AE%9A%E0%AF%86%E0%AE%B2%E0%AF%8D%E0%AE%B2%E0%AE%BE%E0%AE%AE%E0%AF%8D_%E0%AE%AE%E0%AF%86%E0%AE%B2%E0%AF%8D%E0%AE%B2_%E0%AE%AE%E0%AF%86%E0%AE%B2%E0%AF%8D%E0%AE%B2___Song_on_Virgin_Mary__%E0%AE%AE%E0%AE%BE%E0%AE%A4%E0%AE%BE_%E0%AE%AA%E0%AE%BE%E0%AE%9F%E0%AE%B2%E0%AF%8D_128k.mp3",
+      localUrl: "songs/Manasellam_mella_mella___மனசெல்லாம்_மெல்ல_மெல்ல___Song_on_Virgin_Mary__மாதா_பாடல்_128k.mp3",
+      lyrics: [
+        { time: 0, text: "மனசெல்லாம் மெல்ல மெல்ல மரியே உன் பேரைச் சொல்ல..." },
+        { time: 15, text: "Manasellam mella mella Marye un peraich solla" },
+        { time: 30, text: "அகமே அகமே அருள் நிறையுதம்மா..." },
+        { time: 45, text: "Agame agame arul niraiyudhamma" },
+        { time: 60, text: "பூ பூக்கும் நந்தவனம் போல் எந்தன் மனம் தினம்" },
+        { time: 76, text: "அருளால் அருளால் அம்மா உன் அருளால்" },
+        { time: 92, text: "கைத்தாளம் போடுவோம் மகிழ்ந்து கூடுவோம்" },
+        { time: 108, text: "எக்காளம் ஊதுவோம் புகழ்ந்து பாடுவோம்" },
+        { time: 125, text: "ஜெபமாலை சூட்டி மங்களங்கள் கூறுவோம்" },
+        { time: 145, text: "இறைவன் வாழும் சீயோன் நகரமே" },
+        { time: 165, text: "யாவே தங்கிய சீனாய் சிகரமே" },
+        { time: 185, text: "அழிந்திடா பேழையே அழகான சோலையே" },
+        { time: 205, text: "விண்ணக வாசலே மாசில்லாத கன்னியே" },
+        { time: 228, text: "ஆணவத்தை தாழ்சியினால் ஆளும் ஜெபமாலையே" },
+        { time: 250, text: "மனசெல்லாம் மெல்ல மெல்ல மரியே உன் பேரைச் சொல்ல..." }
+      ]
     }
   ]
 };
@@ -293,6 +384,7 @@ const SVG_PAUSE = '<path d="M5.7 3a.7.7 0 0 0-.7.7v16.6a.7.7 0 0 0 .7.7h2.6a.7.7
 // 5. INITIALIZATION
 function initApp() {
   updateGreeting();
+  updatePlaylistMeta();
   renderTracklist();
   renderFastAccessGrid();
   renderRecommendedCards();
@@ -311,6 +403,14 @@ function updateGreeting() {
   if (hour < 12) greetingEl.textContent = 'Good morning';
   else if (hour < 17) greetingEl.textContent = 'Good afternoon';
   else greetingEl.textContent = 'Good evening';
+}
+
+// Set playlist hero stats
+function updatePlaylistMeta() {
+  const totalDurationSec = playlistData.tracks.reduce((acc, t) => acc + (t.duration || 0), 0);
+  const totalMin = Math.floor(totalDurationSec / 60);
+  const totalSec = totalDurationSec % 60;
+  heroTracksInfo.textContent = `${playlistData.tracks.length} songs, ${totalMin} min ${totalSec} sec`;
 }
 
 // 6. RENDER TRACKLIST TABLE
@@ -442,10 +542,13 @@ function renderRecommendedCards() {
 function renderArtistCards() {
   artistsGrid.innerHTML = '';
   const artists = [
-    { name: "Our Lady of Velankanni", role: "Devotional Curations", cover: "assets/playlist_cover.svg" },
-    { name: "Ave Maria Updates", role: "Artist • Marian Hymns", cover: "assets/cover1.svg" },
-    { name: "Matha Devotional Choir", role: "Artist • Catholic Hymns", cover: "assets/cover2.svg" },
-    { name: "Velankanni Melodies", role: "Ensemble • Tamil Geethangal", cover: "assets/cover4.svg" }
+    { name: "Our Lady of Velankanni", role: "Devotional Curations", cover: "assets/playlist_cover.svg", trackIndex: 0 },
+    { name: "Ave Maria Updates", role: "Artist • Marian Hymns", cover: "assets/cover1.svg", trackIndex: 0 },
+    { name: "Matha Devotional Choir", role: "Artist • Catholic Hymns", cover: "assets/cover2.svg", trackIndex: 1 },
+    { name: "Velankanni Melodies", role: "Ensemble • Tamil Geethangal", cover: "assets/cover4.svg", trackIndex: 3 },
+    { name: "Catholic Marian Devotional", role: "Traditional Hymns", cover: "assets/cover6.svg", trackIndex: 5 },
+    { name: "Catholic Musing", role: "Ensemble • Sacred Chants", cover: "assets/cover7.svg", trackIndex: 6 },
+    { name: "Fr. G.V. Panneer Selvam", role: "Artist • Marian Praise", cover: "assets/cover8.svg", trackIndex: 7 }
   ];
 
   artists.forEach(artist => {
@@ -462,8 +565,8 @@ function renderArtistCards() {
       <div class="card-desc">${artist.role}</div>
     `;
     card.addEventListener('click', () => {
-      showToast(`Playing artist radio: ${artist.name}`);
-      playTrack(0);
+      showToast(`Playing: ${artist.name}`);
+      playTrack(artist.trackIndex !== undefined ? artist.trackIndex : 0);
     });
     artistsGrid.appendChild(card);
   });
@@ -905,7 +1008,7 @@ function openHomeView() {
   heroCoverArt.src = playlistData.cover;
   heroTitle.textContent = playlistData.title;
   heroDesc.textContent = playlistData.description;
-  heroTracksInfo.textContent = "5 songs, 25 min 22 sec";
+  updatePlaylistMeta();
   renderTracklist();
 }
 
@@ -1234,6 +1337,12 @@ function setupEventListeners() {
   document.getElementById('item-mangala').addEventListener('click', () => playTrack(1));
   document.getElementById('item-vinmeen').addEventListener('click', () => playTrack(3));
   document.getElementById('item-arokiya').addEventListener('click', () => playTrack(4));
+  const kovililItem = document.getElementById('item-kovilil');
+  if (kovililItem) kovililItem.addEventListener('click', () => playTrack(5));
+  const alaikadalItem = document.getElementById('item-alaikadal');
+  if (alaikadalItem) alaikadalItem.addEventListener('click', () => playTrack(6));
+  const manasellamItem = document.getElementById('item-manasellam');
+  if (manasellamItem) manasellamItem.addEventListener('click', () => playTrack(7));
 
   // Search Inputs
   globalSearchInput.addEventListener('input', (e) => {
@@ -1257,7 +1366,7 @@ function setupEventListeners() {
 
   playlistDownloadBtn.addEventListener('click', () => {
     playlistDownloadBtn.classList.toggle('downloaded');
-    showToast("Downloaded all 5 songs for offline listening!", true);
+    showToast(`Downloaded all ${playlistData.tracks.length} songs for offline listening!`, true);
   });
 
   document.getElementById('playlist-more-btn').addEventListener('click', () => {
