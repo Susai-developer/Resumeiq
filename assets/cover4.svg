@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4c0519"/>
+      <stop offset="50%" stop-color="#881337"/>
+      <stop offset="100%" stop-color="#2a0410"/>
+    </linearGradient>
+    <radialGradient id="roseGlow" cx="50%" cy="38%" r="48%">
+      <stop offset="0%" stop-color="#fb7185" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#4c0519" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow4" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="500" height="500" fill="url(#bg4)"/>
+  <circle cx="250" cy="190" r="170" fill="url(#roseGlow)"/>
+
+  <!-- Field of Stars (Vinmeen) -->
+  <g fill="#fef08a">
+    <!-- Starburst central -->
+    <path d="M 250 110 L 255 170 L 315 175 L 255 180 L 250 240 L 245 180 L 185 175 L 245 170 Z" fill="#ffffff" filter="url(#shadow4)"/>
+    <circle cx="250" cy="175" r="14" fill="#fbbf24"/>
+
+    <!-- Surrounding Stars -->
+    <polygon points="140,110 143,118 152,118 145,124 148,132 140,127 132,132 135,124 128,118 137,118"/>
+    <polygon points="360,110 363,118 372,118 365,124 368,132 360,127 352,132 355,124 348,118 357,118"/>
+    <polygon points="120,220 122,226 128,226 123,230 125,236 120,232 115,236 117,230 112,226 118,226"/>
+    <polygon points="380,220 382,226 388,226 383,230 385,236 380,232 375,236 377,230 372,226 378,226"/>
+    <polygon points="200,80 202,85 208,85 203,88 205,94 200,90 195,94 197,88 192,85 198,85"/>
+    <polygon points="300,80 302,85 308,85 303,88 305,94 300,90 295,94 297,88 292,85 298,85"/>
+    <polygon points="250,270 252,275 258,275 253,278 255,284 250,280 245,284 247,278 242,275 248,275"/>
+  </g>
+
+  <!-- Velvet banner -->
+  <rect x="0" y="370" width="500" height="130" fill="#20030c" opacity="0.95"/>
+  <rect x="0" y="368" width="500" height="2" fill="#f43f5e" opacity="0.6"/>
+
+  <text x="30" y="415" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="22" font-weight="800" fill="#ffffff" letter-spacing="0.5">
+    Kodi Vinmeen Vanathilae
+  </text>
+  <text x="30" y="445" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#fda4af">
+    கோடி விண்மீன் வானத்திலே
+  </text>
+  <text x="30" y="475" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13" font-weight="500" fill="#e11d48">
+    Velankanni Matha • Velankanni Geethangal
+  </text>
+
+  <!-- Spotify style badge -->
+  <circle cx="450" cy="435" r="22" fill="#1ed760"/>
+  <polygon points="445,424 461,435 445,446" fill="#000000"/>
+</svg>

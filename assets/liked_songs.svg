@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="likedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#450af5"/>
+      <stop offset="60%" stop-color="#8e8ee5"/>
+      <stop offset="100%" stop-color="#c4efd9"/>
+    </linearGradient>
+    <filter id="heartShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="500" height="500" fill="url(#likedGrad)"/>
+  
+  <g filter="url(#heartShadow)" transform="translate(250, 250) scale(1.4)">
+    <path d="M 0 -35 C -35 -75 -90 -30 -90 15 C -90 60 -10 100 0 115 C 10 100 90 60 90 15 C 90 -30 35 -75 0 -35 Z" fill="#ffffff"/>
+  </g>
+</svg>

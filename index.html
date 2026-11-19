@@ -1,105 +1,624 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ResumeIQ - AI Powered Universal Resume Checker</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
-<script>document.documentElement.classList.add('js');</script>
-<link rel="stylesheet" href="css/style.css">
-<style>
-/* ===== Animations only. No layout or color changes. ===== */
-html{scroll-behavior:smooth}
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spotify - Web Player: Velankanni Matha Special</title>
+  <link rel="icon" type="image/svg+xml" href="assets/spotify_logo.svg" />
+  <!-- Google Fonts for Circular/Plus Jakarta Sans style -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-/* Scroll reveal (hidden only when JS is running) */
-.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
-.js .reveal.in{opacity:1;transform:none}
+  <!-- Audio Element for Streaming -->
+  <audio id="main-audio" preload="metadata"></audio>
 
-/* Hero entrance */
-@keyframes riseIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@keyframes growX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-.hero .pill,.hero h1,.hero .lead,.hero .btn{animation:riseIn .7s cubic-bezier(.2,.7,.2,1) both}
-.hero .pill{animation-delay:.05s}
-.hero h1{animation-delay:.15s}
-.hero .lead{animation-delay:.3s}
-.hero .btn:nth-of-type(1){animation-delay:.45s}
-.hero .btn:nth-of-type(2){animation-delay:.55s}
-.hero .mock{animation:riseIn .8s cubic-bezier(.2,.7,.2,1) .3s both,floatY 6s ease-in-out 1.2s infinite}
-.hero .bar i{transform-origin:left;animation:growX 1s cubic-bezier(.2,.7,.2,1) .9s both}
+  <div class="app-container">
+    
+    <!-- ============================================================
+         LEFT SIDEBAR
+         ============================================================ -->
+    <aside class="sidebar">
+      <!-- Main Nav Box -->
+      <div class="sidebar-box sidebar-nav">
+        <div class="brand-logo" id="nav-logo" title="Spotify">
+          <img src="assets/logo.png" alt="Spotify" />
+        </div>
+        <ul class="nav-links">
+          <li class="nav-item active" id="nav-home">
+            <svg viewBox="0 0 24 24"><path d="M12.5 3.247a1 1 0 0 0-1 0L4 7.577V20h4.5v-6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v6H20V7.577l-7.5-4.33zm-2-1.732a3 3 0 0 1 3 0l7.5 4.33A2 2 0 0 1 22 7.577V21a1 1 0 0 1-1 1h-6.5a1 1 0 0 1-1-1v-5h-3v5a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.577a2 2 0 0 1 1-1.732l7.5-4.33z"/></svg>
+            <span>Home</span>
+          </li>
+          <li class="nav-item" id="nav-search">
+            <svg viewBox="0 0 24 24"><path d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 1 0 1.414-1.414l-4.344-4.344a9.157 9.157 0 0 0 2.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z"/></svg>
+            <span>Search</span>
+          </li>
+        </ul>
+      </div>
 
-/* Hover transitions */
-.card-x{transition:transform .3s ease,box-shadow .3s ease}
-.card-x:hover{transform:translateY(-6px);box-shadow:0 14px 28px rgba(0,0,0,.1)}
-.card-x .icon,.block .icon{transition:transform .3s ease}
-.card-x:hover .icon{transform:scale(1.1) rotate(-6deg)}
-#how .icon:hover{transform:scale(1.12)}
-.btn{transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease,color .2s ease}
-.btn:hover{transform:translateY(-2px)}
-.btn:active{transform:translateY(0)}
-.cta{transition:transform .4s ease}
-.cta:hover{transform:scale(1.01)}
+      <!-- Library Box -->
+      <div class="sidebar-box sidebar-library">
+        <div class="library-header">
+          <div class="library-title" id="library-title-btn">
+            <svg viewBox="0 0 24 24"><path d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1.5.866l5.5-3.175A1 1 0 0 0 21.5 17.825V4.175a1 1 0 0 0-.5-.866l-5.5-3.175zM8 3a1 1 0 0 0-2 0v18a1 1 0 0 0 2 0V3z"/></svg>
+            <span>Your Library</span>
+          </div>
+          <div class="library-actions">
+            <button class="icon-btn" id="create-playlist-btn" title="Create playlist or folder">
+              <svg viewBox="0 0 16 16"><path d="M15.25 8a.75.75 0 0 1-.75.75H8.75v5.75a.75.75 0 0 1-1.5 0V8.75H1.5a.75.75 0 0 1 0-1.5h5.75V1.5a.75.75 0 0 1 1.5 0v5.75h5.75a.75.75 0 0 1 .75.75z"/></svg>
+            </button>
+            <button class="icon-btn" title="Show more">
+              <svg viewBox="0 0 16 16"><path d="M13.25 2.5a.75.75 0 0 1 0 1.5h-10.5a.75.75 0 0 1 0-1.5h10.5zm0 5a.75.75 0 0 1 0 1.5h-10.5a.75.75 0 0 1 0-1.5h10.5zm0 5a.75.75 0 0 1 0 1.5h-10.5a.75.75 0 0 1 0-1.5h10.5z"/></svg>
+            </button>
+          </div>
+        </div>
 
-@media (prefers-reduced-motion:reduce){
- *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
- .js .reveal{opacity:1!important;transform:none!important}
-}
-</style></head>
-<body data-page="home"><div id="nav"></div>
-<header class="hero"><div class="container"><div class="row align-items-center g-5">
- <div class="col-lg-6">
-  <span class="pill">For every profession</span>
-  <h1 class="mt-3">Know how your resume performs before an employer does.</h1>
-  <p class="lead mt-3">Upload your resume. ResumeIQ scores it, shows what to fix, and quizzes you on your own experience, whether you are a nurse, teacher, designer, accountant or engineer.</p>
-  <a href="dashboard.html" class="btn btn-brand btn-lg me-2">Upload resume</a><a href="#how" class="btn btn-soft btn-lg">How it works</a>
- </div>
- <div class="col-lg-5 offset-lg-1"><div class="mock">
-  <div class="d-flex align-items-center gap-4"><div class="ring" id="heroRing"><div><span><b>0</b><small>/100</small></span></div></div>
-  <div><h5 class="mb-0">Your Resume Score</h5><small class="text-muted">Instant analysis preview</small></div></div>
-  <hr><div class="small fw-bold d-flex justify-content-between"><span>Skills</span><span>75</span></div><div class="bar mb-3"><i style="width:75%"></i></div>
-  <div class="small fw-bold d-flex justify-content-between"><span>Experience</span><span>80</span></div><div class="bar"><i style="width:80%"></i></div>
- </div></div></div></div></header>
+        <!-- Filter Chips -->
+        <div class="library-chips">
+          <button class="chip active">Playlists</button>
+          <button class="chip">Artists</button>
+          <button class="chip">Albums</button>
+          <button class="chip">Podcasts</button>
+        </div>
 
-<section class="block"><div class="container"><h2 class="text-center mb-5">Everything you need to improve a resume</h2><div class="row g-4">
- <div class="col-md-4"><div class="card-x"><div class="icon"><i class="bi bi-file-earmark-arrow-up"></i></div><h5>Upload any format</h5><p class="text-muted mb-0">PDF, JPG, JPEG or PNG. Scanned resumes work too.</p></div></div>
- <div class="col-md-4"><div class="card-x"><div class="icon"><i class="bi bi-graph-up-arrow"></i></div><h5>Score and feedback</h5><p class="text-muted mb-0">A score out of 100 with strengths, weaknesses and fixes.</p></div></div>
- <div class="col-md-4"><div class="card-x"><div class="icon"><i class="bi bi-patch-question"></i></div><h5>Resume-based quiz</h5><p class="text-muted mb-0">10 questions on your profession, from Easy to Hard.</p></div></div>
-</div></div></section>
+        <!-- Search in Library -->
+        <div class="library-search-bar">
+          <button class="search-icon-btn">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M7 1.75a5.25 5.25 0 1 0 0 10.5 5.25 5.25 0 0 0 0-10.5zM.25 7a6.75 6.75 0 1 1 12.096 4.12l3.184 3.185a.75.75 0 1 1-1.06 1.06L11.28 12.18A6.75 6.75 0 0 1 .25 7z"/></svg>
+          </button>
+          <div class="sort-label">
+            <span>Recents</span>
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M15 14.5H5V13h10v1.5zm0-5.75H5v-1.5h10v1.5zM0 3h15v1.5H0V3z"/></svg>
+          </div>
+        </div>
 
-<section class="block" id="how" style="background:var(--sky)"><div class="container"><h2 class="text-center mb-5">How it works</h2><div class="row g-4 text-center">
- <div class="col-md-3"><div class="icon mx-auto">1</div><h5>Upload</h5><p class="text-muted">Choose your resume file.</p></div>
- <div class="col-md-3"><div class="icon mx-auto">2</div><h5>Analyze</h5><p class="text-muted">AI reads your profile.</p></div>
- <div class="col-md-3"><div class="icon mx-auto">3</div><h5>Take the quiz</h5><p class="text-muted">Answer 10 questions.</p></div>
- <div class="col-md-3"><div class="icon mx-auto">4</div><h5>Review</h5><p class="text-muted">See answers and explanations.</p></div>
-</div></div></section>
+        <!-- Playlists List -->
+        <ul class="library-list" id="library-list">
+          <!-- Liked Songs -->
+          <li class="playlist-item" id="item-liked-songs">
+            <img src="assets/liked_songs.svg" alt="Liked Songs" class="playlist-thumb" />
+            <div class="playlist-info">
+              <span class="playlist-item-title">Liked Songs</span>
+              <div class="playlist-meta">
+                <svg class="pin-icon" viewBox="0 0 16 16"><path d="M8.822.797a2.72 2.72 0 0 1 3.847 0l2.534 2.533a2.72 2.72 0 0 1 0 3.848l-3.678 3.678-1.337 4.988-4.486-4.486L1.28 15.78a.75.75 0 0 1-1.06-1.06l4.42-4.42-4.485-4.487 4.988-1.337L8.822.797z"/></svg>
+                <span>Playlist • <span id="liked-count-badge">0 songs</span></span>
+              </div>
+            </div>
+          </li>
 
-<section class="block"><div class="container"><div class="cta text-center"><h2>Ready to see your score?</h2><p>It takes less than a minute.</p><a href="dashboard.html" class="btn btn-light btn-lg fw-bold">Check my resume</a></div></div></section>
-<div id="foot"></div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/main.js"></script>
-<script>
-/* Scroll reveal: classes are added here so the HTML structure stays the same */
-(function(){
- var els=[];
- function add(sel,stagger){
-  document.querySelectorAll(sel).forEach(function(el,i){
-   el.classList.add('reveal');
-   if(stagger)el.style.setProperty('--d',(i*0.12)+'s');
-   els.push(el);
-  });
- }
- add('.block h2');
- add('.block .col-md-4',true);
- add('#how .col-md-3',true);
- add('.cta');
- if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-  els.forEach(function(e){e.classList.add('in');});return;
- }
- var io=new IntersectionObserver(function(entries){
-  entries.forEach(function(en){
-   if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
-  });
- },{threshold:.15,rootMargin:'0px 0px -40px 0px'});
- els.forEach(function(e){io.observe(e);});
-})();
-</script>
-</body></html>
+          <!-- Featured Velankanni Playlist -->
+          <li class="playlist-item active" id="item-velankanni">
+            <img src="assets/playlist_cover.svg" alt="Velankanni Matha Special" class="playlist-thumb" />
+            <div class="playlist-info">
+              <span class="playlist-item-title">Velankanni Matha Special</span>
+              <div class="playlist-meta">
+                <svg class="pin-icon" viewBox="0 0 16 16"><path d="M8.822.797a2.72 2.72 0 0 1 3.847 0l2.534 2.533a2.72 2.72 0 0 1 0 3.848l-3.678 3.678-1.337 4.988-4.486-4.486L1.28 15.78a.75.75 0 0 1-1.06-1.06l4.42-4.42-4.485-4.487 4.988-1.337L8.822.797z"/></svg>
+                <span>Playlist • Spotify</span>
+              </div>
+            </div>
+          </li>
+
+          <!-- Marian Hymns -->
+          <li class="playlist-item" id="item-marian">
+            <img src="assets/cover1.svg" alt="Marian Hymns" class="playlist-thumb" />
+            <div class="playlist-info">
+              <span class="playlist-item-title">Umai Thedi Vanthen (Madha)</span>
+              <div class="playlist-meta">
+                <span>Song • Ave Maria Updates</span>
+              </div>
+            </div>
+          </li>
+
+          <!-- Mangala Nilave -->
+          <li class="playlist-item" id="item-mangala">
+            <img src="assets/cover2.svg" alt="Mangala Nilave" class="playlist-thumb" />
+            <div class="playlist-info">
+              <span class="playlist-item-title">Mangala Nilave Maamari</span>
+              <div class="playlist-meta">
+                <span>Song • Matha Devotional</span>
+              </div>
+            </div>
+          </li>
+
+          <!-- Kodi Vinmeen -->
+          <li class="playlist-item" id="item-vinmeen">
+            <img src="assets/cover4.svg" alt="Kodi Vinmeen" class="playlist-thumb" />
+            <div class="playlist-info">
+              <span class="playlist-item-title">Kodi Vinmeen Vanathilae</span>
+              <div class="playlist-meta">
+                <span>Song • Velankanni Matha</span>
+              </div>
+            </div>
+          </li>
+
+          <!-- Arokiya Thaye -->
+          <li class="playlist-item" id="item-arokiya">
+            <img src="assets/cover5.svg" alt="Arokiya Thaye" class="playlist-thumb" />
+            <div class="playlist-info">
+              <span class="playlist-item-title">Arokiya Thaye Amma Amma</span>
+              <div class="playlist-meta">
+                <span>Song • Catholic Devotional</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- ============================================================
+         MAIN CONTENT VIEW
+         ============================================================ -->
+    <main class="main-view" id="main-view">
+      
+      <!-- Top Navigation Bar -->
+      <header class="topbar" id="topbar">
+        <div class="topbar-left">
+          <div class="history-nav">
+            <button class="history-btn" id="history-back-btn" title="Go back">
+              <svg viewBox="0 0 16 16"><path d="M11.03.47a.75.75 0 0 1 0 1.06L4.56 8l6.47 6.47a.75.75 0 1 1-1.06 1.06L2.44 8.53a.75.75 0 0 1 0-1.06L9.97.47a.75.75 0 0 1 1.06 0z"/></svg>
+            </button>
+            <button class="history-btn" id="history-forward-btn" title="Go forward">
+              <svg viewBox="0 0 16 16"><path d="M4.97.47a.75.75 0 0 0 0 1.06L11.44 8l-6.47 6.47a.75.75 0 1 0 1.06 1.06L13.56 8.53a.75.75 0 0 0 0-1.06L6.03.47a.75.75 0 0 0-1.06 0z"/></svg>
+            </button>
+          </div>
+
+          <!-- Dynamic search bar shown in topbar -->
+          <div class="topbar-search" id="topbar-search">
+            <svg class="search-input-icon" viewBox="0 0 24 24"><path d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 1 0 1.414-1.414l-4.344-4.344a9.157 9.157 0 0 0 2.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z"/></svg>
+            <input type="text" id="global-search-input" class="search-input" placeholder="What do you want to play?" autocomplete="off" />
+            <button class="clear-search-btn" id="clear-search-btn">✕</button>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button class="install-app-pill" id="install-app-pill" title="Listen offline">
+            <svg viewBox="0 0 16 16"><path d="M4.995 8.745a.75.75 0 0 1 1.06 0L7.25 9.939V1.75a.75.75 0 0 1 1.5 0v8.189l1.195-1.194a.75.75 0 1 1 1.06 1.06l-2.475 2.475a.75.75 0 0 1-1.06 0L4.995 9.805a.75.75 0 0 1 0-1.06zM1.5 13.25a.75.75 0 0 1 .75-.75h11.5a.75.75 0 0 1 0 1.5H2.25a.75.75 0 0 1-.75-.75z"/></svg>
+            <span>Install App</span>
+          </button>
+          <button class="icon-btn" id="shortcuts-btn" title="Keyboard shortcuts (?)" style="padding: 8px;">
+            <svg viewBox="0 0 16 16"><path d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm6.5-.25A1.75 1.75 0 0 1 8.25 6h.5a1.75 1.75 0 0 1 1.11 3.107l-.61.49c-.43.344-.69.865-.69 1.403v.25a.75.75 0 0 1-1.5 0v-.25c0-.988.477-1.92 1.25-2.54l.58-.464a.25.25 0 0 0-.14-.446h-.5a.25.25 0 0 0-.25.25.75.75 0 0 1-1.5 0zM8 13.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>
+          </button>
+          <button class="user-profile-btn" title="User Account">
+            <div class="user-avatar">V</div>
+          </button>
+        </div>
+      </header>
+
+      <!-- HOME PAGE VIEW (Hero Banner + Tracks Table + Shelves) -->
+      <div id="home-view-content">
+        <!-- Hero Playlist Banner -->
+        <section class="hero-banner" id="hero-banner">
+          <img src="assets/playlist_cover.svg" alt="Playlist Cover" class="playlist-cover-art" id="hero-cover-art" />
+          <div class="hero-details">
+            <span class="playlist-type" id="hero-type">Public Playlist</span>
+            <h1 class="playlist-title" id="hero-title">Velankanni Matha Special - Devotional Hits</h1>
+            <p class="playlist-description" id="hero-desc">
+              Curated sacred Tamil Marian hymns and prayers dedicated to Our Lady of Good Health, Velankanni. Featuring classic hymns for inner peace, healing, and solace.
+            </p>
+            <div class="playlist-stats">
+              <img src="assets/logo.png" alt="Spotify" class="stats-avatar" />
+              <span id="hero-creator">AROKIYAM</span>
+              <span class="stats-bullet">•</span>
+              <span id="hero-likes">148,239 saves</span>
+              <span class="stats-bullet">•</span>
+              <span id="hero-tracks-info">5 songs, 25 min 22 sec</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Playlist Action Bar -->
+        <section class="action-bar">
+          <div class="action-left">
+            <button class="big-play-btn" id="big-play-btn" title="Play playlist">
+              <svg id="big-play-icon" viewBox="0 0 24 24"><path d="M7.05 3.606l13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"/></svg>
+            </button>
+            <button class="action-icon-btn" id="playlist-heart-btn" title="Save to Your Library">
+              <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </button>
+            <button class="action-icon-btn" id="playlist-download-btn" title="Download playlist for offline">
+              <svg viewBox="0 0 16 16"><path d="M4.995 8.745a.75.75 0 0 1 1.06 0L7.25 9.939V1.75a.75.75 0 0 1 1.5 0v8.189l1.195-1.194a.75.75 0 1 1 1.06 1.06l-2.475 2.475a.75.75 0 0 1-1.06 0L4.995 9.805a.75.75 0 0 1 0-1.06zM1.5 13.25a.75.75 0 0 1 .75-.75h11.5a.75.75 0 0 1 0 1.5H2.25a.75.75 0 0 1-.75-.75z"/></svg>
+            </button>
+            <button class="action-icon-btn" id="playlist-more-btn" title="More options for playlist">
+              <svg viewBox="0 0 24 24"><path d="M4.5 10.5C3.67 10.5 3 11.17 3 12s.67 1.5 1.5 1.5S6 12.83 6 12s-.67-1.5-1.5-1.5zm7.5 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm7.5 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/></svg>
+            </button>
+          </div>
+          <div class="action-right">
+            <div class="filter-tracks-wrapper">
+              <svg class="filter-tracks-icon" viewBox="0 0 16 16"><path d="M7 1.75a5.25 5.25 0 1 0 0 10.5 5.25 5.25 0 0 0 0-10.5zM.25 7a6.75 6.75 0 1 1 12.096 4.12l3.184 3.185a.75.75 0 1 1-1.06 1.06L11.28 12.18A6.75 6.75 0 0 1 .25 7z"/></svg>
+              <input type="text" id="filter-tracks-input" class="filter-tracks-input" placeholder="Search in playlist" />
+            </div>
+          </div>
+        </section>
+
+        <!-- Tracks Table -->
+        <section class="tracks-table-container">
+          <table class="tracks-table">
+            <thead>
+              <tr class="table-header">
+                <th class="th-num">#</th>
+                <th class="th-title">Title</th>
+                <th class="th-album">Album</th>
+                <th class="th-date">Date added</th>
+                <th class="th-duration">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8.75-4.25v4.25a.75.75 0 0 1-.75.75H5a.75.75 0 0 1 0-1.5h2.25V3.75a.75.75 0 0 1 1.5 0z"/></svg>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="tracklist-tbody">
+              <!-- Dynamically rendered via JS -->
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Shelves & Fast Access Section -->
+        <section class="shelves-container">
+          <!-- Fast Access 6-Card Grid -->
+          <div class="shelf">
+            <div class="shelf-header">
+              <h2 class="shelf-title" id="greeting-title">Good evening</h2>
+            </div>
+            <div class="fast-access-grid" id="fast-access-grid">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Recommended Devotional Tracks -->
+          <div class="shelf">
+            <div class="shelf-header">
+              <h2 class="shelf-title">Popular Marian Songs</h2>
+              <span class="shelf-see-all">Show all</span>
+            </div>
+            <div class="shelf-grid" id="recommended-grid">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Featured Artists & Choirs -->
+          <div class="shelf">
+            <div class="shelf-header">
+              <h2 class="shelf-title">Featured Choirs & Artists</h2>
+              <span class="shelf-see-all">Show all</span>
+            </div>
+            <div class="shelf-grid" id="artists-grid">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- SEARCH VIEW (Genre Browse & Search Results) -->
+      <div class="search-view" id="search-view-content">
+        <h2 class="shelf-title">Browse all</h2>
+        <div class="search-genre-grid" id="genre-grid">
+          <div class="genre-tile" style="background-color: #e13300;">
+            <span class="genre-tile-title">Tamil Devotional</span>
+            <img src="assets/cover1.svg" class="genre-tile-art" alt="" />
+          </div>
+          <div class="genre-tile" style="background-color: #1e3264;">
+            <span class="genre-tile-title">Velankanni Special</span>
+            <img src="assets/playlist_cover.svg" class="genre-tile-art" alt="" />
+          </div>
+          <div class="genre-tile" style="background-color: #8d67ab;">
+            <span class="genre-tile-title">Marian Hymns</span>
+            <img src="assets/cover2.svg" class="genre-tile-art" alt="" />
+          </div>
+          <div class="genre-tile" style="background-color: #006450;">
+            <span class="genre-tile-title">Peace & Prayer</span>
+            <img src="assets/cover3.svg" class="genre-tile-art" alt="" />
+          </div>
+          <div class="genre-tile" style="background-color: #e8115b;">
+            <span class="genre-tile-title">Morning Rosary</span>
+            <img src="assets/cover4.svg" class="genre-tile-art" alt="" />
+          </div>
+          <div class="genre-tile" style="background-color: #ba5d07;">
+            <span class="genre-tile-title">Catholic Chants</span>
+            <img src="assets/cover5.svg" class="genre-tile-art" alt="" />
+          </div>
+        </div>
+
+        <div id="search-results-section" style="display: none;">
+          <h2 class="shelf-title">Songs matching your search</h2>
+          <div class="tracks-table-container" style="padding: 16px 0;">
+            <table class="tracks-table">
+              <tbody id="search-results-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ============================================================
+         RIGHT SIDEBAR (NOW PLAYING / LYRICS / QUEUE)
+         ============================================================ -->
+    <aside class="right-sidebar" id="right-sidebar">
+      <div class="panel-header">
+        <span class="panel-title" id="panel-title">Now Playing</span>
+        <button class="panel-close-btn" id="panel-close-btn" title="Close panel">
+          <svg viewBox="0 0 16 16"><path d="M2.47 2.47a.75.75 0 0 1 1.06 0L8 6.94l4.47-4.47a.75.75 0 1 1 1.06 1.06L9.06 8l4.47 4.47a.75.75 0 1 1-1.06 1.06L8 9.06l-4.47 4.47a.75.75 0 0 1-1.06-1.06L6.94 8 2.47 3.53a.75.75 0 0 1 0-1.06z"/></svg>
+        </button>
+      </div>
+
+      <!-- Now Playing View -->
+      <div class="now-playing-panel" id="now-playing-panel">
+        <img src="assets/cover1.svg" alt="Song cover" class="panel-cover-art" id="panel-cover-img" />
+        <div class="panel-song-info">
+          <div>
+            <h3 class="panel-song-title" id="panel-title-text">Umai Thedi Vanthen</h3>
+            <p class="panel-song-artist" id="panel-artist-text">Ave Maria Updates</p>
+          </div>
+          <button class="player-heart-btn" id="panel-heart-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </button>
+        </div>
+
+        <!-- About the Artist -->
+        <div class="panel-artist-card">
+          <img src="assets/playlist_cover.svg" alt="Artist banner" class="panel-artist-banner" />
+          <div class="panel-artist-body">
+            <h4 class="panel-artist-name" id="panel-artist-card-name">Our Lady of Velankanni</h4>
+            <span class="panel-listeners">842,510 monthly listeners</span>
+            <p class="panel-bio">
+              Devotional Marian hymns sung in praise of Our Lady of Good Health, Velankanni. Revered by millions across the globe for miracles, peace, and spiritual strength.
+            </p>
+          </div>
+        </div>
+
+        <!-- Next in Queue Preview -->
+        <div class="panel-queue-card">
+          <div class="panel-queue-header">
+            <span>Next in queue</span>
+            <span style="color: var(--sp-green); cursor: pointer;" id="open-full-queue">Open queue</span>
+          </div>
+          <div class="panel-queue-item" id="panel-next-preview">
+            <img src="assets/cover2.svg" alt="Next song" class="panel-queue-art" id="panel-next-art" />
+            <div>
+              <div style="font-size: 14px; font-weight: 600; color: #fff;" id="panel-next-title">Mangala Nilave</div>
+              <div style="font-size: 12px; color: var(--sp-text-secondary);" id="panel-next-artist">Matha Devotional</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Synchronized Lyrics View -->
+      <div class="lyrics-panel-view" id="lyrics-panel-view">
+        <div class="lyrics-container" id="panel-lyrics-container">
+          <!-- Live lyrics lines inserted by JS -->
+        </div>
+      </div>
+
+      <!-- Queue View -->
+      <div class="queue-panel-view" id="queue-panel-view">
+        <span class="queue-section-title">Now Playing</span>
+        <ul class="queue-list" id="queue-now-playing-item"></ul>
+        <span class="queue-section-title" style="margin-top: 16px;">Next Up</span>
+        <ul class="queue-list" id="queue-upcoming-list"></ul>
+      </div>
+    </aside>
+
+    <!-- ============================================================
+         BOTTOM PLAYER BAR (NOW PLAYING PERSISTENT BAR)
+         ============================================================ */ -->
+    <footer class="player-bar">
+      <!-- Left: Song details -->
+      <div class="player-left">
+        <div class="player-thumb-wrap" id="player-thumb-wrap" title="Expand view">
+          <img src="assets/cover1.svg" alt="Now Playing" class="player-thumb" id="player-thumb" />
+          <button class="player-expand-btn">
+            <svg viewBox="0 0 16 16"><path d="M7.75 3.5a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 0 1.5h-3.5v3.5a.75.75 0 0 1-1.5 0v-3.5h-3.5a.75.75 0 0 1 0-1.5h3.5v-3.5a.75.75 0 0 1 .75-.75z"/></svg>
+          </button>
+        </div>
+        <div class="player-track-info">
+          <span class="player-title" id="player-title">Umai Thedi Vanthen Sumai Theerumama</span>
+          <span class="player-artist" id="player-artist">Ave Maria Updates</span>
+        </div>
+        <button class="player-heart-btn" id="player-heart-btn" title="Save to Your Library">
+          <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </button>
+      </div>
+
+      <!-- Center: Controls & Progress bar -->
+      <div class="player-center">
+        <div class="player-controls">
+          <button class="ctrl-btn" id="ctrl-shuffle-btn" title="Enable shuffle">
+            <svg viewBox="0 0 16 16"><path d="M13.151.922a.75.75 0 1 0-1.06 1.06L13.109 3H11.16a3.75 3.75 0 0 0-2.873 1.34l-6.173 7.356A2.25 2.25 0 0 1 .39 12.5H0V14h.391a3.75 3.75 0 0 0 2.873-1.34l6.173-7.356a2.25 2.25 0 0 1 1.724-.804h1.947l-1.017 1.018a.75.75 0 0 0 1.06 1.06L15.98 3.75 13.15.922zM.391 3.5H0V2h.391c1.109 0 2.16.49 2.873 1.34L4.89 5.28l-.988 1.176-1.79-2.152A2.25 2.25 0 0 0 .39 3.5zm10.768 7.34a2.25 2.25 0 0 0-1.723.804l-1.625 1.936.988 1.176 1.79-2.152a.75.75 0 0 1 .57-.264h1.95l-1.018 1.018a.75.75 0 0 0 1.06 1.06L15.98 11.75l-2.829-2.828a.75.75 0 0 0-1.06 1.06l1.018 1.018h-1.95z"/></svg>
+          </button>
+          <button class="ctrl-btn" id="ctrl-prev-btn" title="Previous">
+            <svg viewBox="0 0 16 16"><path d="M3.3 1a.7.7 0 0 1 .7.7v5.15l9.95-5.744a.7.7 0 0 1 1.05.606v12.576a.7.7 0 0 1-1.05.607L4 9.149V14.3a.7.7 0 0 1-.7.7H1.7a.7.7 0 0 1-.7-.7V1.7a.7.7 0 0 1 .7-.7h1.6z"/></svg>
+          </button>
+          <button class="ctrl-play-pause" id="ctrl-play-pause" title="Play">
+            <svg id="ctrl-play-icon" viewBox="0 0 24 24"><path d="M7.05 3.606l13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"/></svg>
+          </button>
+          <button class="ctrl-btn" id="ctrl-next-btn" title="Next">
+            <svg viewBox="0 0 16 16"><path d="M12.7 1a.7.7 0 0 0-.7.7v5.15L2.05 1.107A.7.7 0 0 0 1 1.714v12.572a.7.7 0 0 0 1.05.607L12 9.149V14.3a.7.7 0 0 0 .7.7h1.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-1.6z"/></svg>
+          </button>
+          <button class="ctrl-btn" id="ctrl-repeat-btn" title="Enable repeat">
+            <svg viewBox="0 0 16 16"><path d="M0 4.75A3.75 3.75 0 0 1 3.75 1h8.5A3.75 3.75 0 0 1 16 4.75v5a3.75 3.75 0 0 1-3.75 3.75H9.81l1.018 1.018a.75.75 0 1 1-1.06 1.06L6.939 12.75l2.829-2.828a.75.75 0 1 1 1.06 1.06L9.811 12h2.439a2.25 2.25 0 0 0 2.25-2.25v-5a2.25 2.25 0 0 0-2.25-2.25h-8.5A2.25 2.25 0 0 0 1.5 4.75v5A2.25 2.25 0 0 0 3.75 12H5v1.5H3.75A3.75 3.75 0 0 1 0 9.75v-5z"/></svg>
+          </button>
+        </div>
+
+        <div class="progress-container">
+          <span class="time-stamp" id="current-time">0:00</span>
+          <div class="slider-wrapper" id="progress-wrapper">
+            <div class="slider-track" id="progress-track">
+              <div class="slider-fill" id="progress-fill">
+                <div class="slider-thumb" id="progress-thumb"></div>
+              </div>
+            </div>
+          </div>
+          <span class="time-stamp" id="total-duration">5:20</span>
+        </div>
+      </div>
+
+      <!-- Right: Lyrics, Queue, Connect, Volume, Fullscreen -->
+      <div class="player-right">
+        <button class="ctrl-btn" id="btn-toggle-panel" title="Now playing view">
+          <svg viewBox="0 0 16 16"><path d="M11.196 8 6 5v6l5.196-3z"/><path d="M15.002 1.75A1.75 1.75 0 0 0 13.252 0h-10.5a1.75 1.75 0 0 0-1.75 1.75v12.5c0 .966.783 1.75 1.75 1.75h10.5a1.75 1.75 0 0 0 1.75-1.75V1.75zm-1.75-.25a.25.25 0 0 1 .25.25v12.5a.25.25 0 0 1-.25.25h-10.5a.25.25 0 0 1-.25-.25V1.75a.25.25 0 0 1 .25-.25h10.5z"/></svg>
+        </button>
+        <button class="ctrl-btn" id="btn-toggle-lyrics" title="Lyrics">
+          <svg viewBox="0 0 16 16"><path d="M13.426 2.574a2.831 2.831 0 0 0-4.797 1.55l3.247 3.246a2.832 2.832 0 0 0 1.55-4.796zm-5.748 2.5 3.246 3.247-6.07 6.071a1.5 1.5 0 0 1-.72.4l-2.829.707a.5.5 0 0 1-.606-.606l.707-2.829a1.5 1.5 0 0 1 .4-.72l6.072-6.07zm-4.72 8.352 1.414 1.414.707-.707-1.414-1.414-.707.707z"/></svg>
+        </button>
+        <button class="ctrl-btn" id="btn-toggle-queue" title="Queue">
+          <svg viewBox="0 0 16 16"><path d="M15 15H1v-1.5h14V15zm0-4.5H1V9h14v1.5zm-14-7A2.5 2.5 0 0 1 3.5 1h9a2.5 2.5 0 0 1 2.5 2.5v2.25a.75.75 0 0 1-1.5 0V3.5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1v2.25a.75.75 0 0 1-1.5 0V3.5z"/></svg>
+        </button>
+        <button class="ctrl-btn action-device-btn" id="btn-connect-device" title="Connect to a device">
+          <svg viewBox="0 0 16 16"><path d="M6 2.75C6 1.784 6.784 1 7.75 1h6.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15h-6.5A1.75 1.75 0 0 1 6 13.25V2.75zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h6.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25h-6.5zm-6 4.5A1.75 1.75 0 0 1 3.5 5.25h1a.75.75 0 0 1 0 1.5h-1a.25.25 0 0 0-.25.25v5c0 .138.112.25.25.25h1a.75.75 0 0 1 0 1.5h-1A1.75 1.75 0 0 1 1.75 12v-5z"/></svg>
+        </button>
+
+        <!-- Volume slider -->
+        <div class="volume-wrapper">
+          <button class="ctrl-btn" id="volume-icon-btn" title="Mute/Unmute">
+            <svg id="volume-icon" viewBox="0 0 16 16"><path d="M9.741.85a.75.75 0 0 1 .375.65v13a.75.75 0 0 1-1.125.65l-6.925-4H0V4.85h2.066l6.925-4a.75.75 0 0 1 .75 0zm-1.116 2.11L3.066 6.35H1.5v3.3h1.566l5.559 3.39V2.96zM11.5 5.56a.75.75 0 0 1 1.06 0 3.5 3.5 0 0 1 0 4.88.75.75 0 0 1-1.06-1.06 2 2 0 0 0 0-2.76.75.75 0 0 1 0-1.06z"/></svg>
+          </button>
+          <div class="volume-slider-wrapper" id="volume-wrapper">
+            <div class="volume-track" id="volume-track">
+              <div class="volume-fill" id="volume-fill">
+                <div class="volume-thumb" id="volume-thumb"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="ctrl-btn action-fs-btn" id="btn-fullscreen" title="Full screen">
+          <svg viewBox="0 0 16 16"><path d="M6.53 10.03a.75.75 0 0 1 1.06 0l4.47 4.47V11a.75.75 0 0 1 1.5 0v5a.75.75 0 0 1-.75.75h-5a.75.75 0 0 1 0-1.5h3.53L6.53 10.74a.75.75 0 0 1 0-1.06zm-5-4.5a.75.75 0 0 1 0-1.06l4.47-4.47H2.5a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 .75.75v5a.75.75 0 0 1-1.5 0V1.53L2.24 6.59a.75.75 0 0 1-1.06 0z"/></svg>
+        </button>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ============================================================
+       IMMERSIVE FULLSCREEN OVERLAY
+       ============================================================ -->
+  <div class="fullscreen-overlay" id="fullscreen-overlay">
+    <div class="fs-topbar">
+      <div class="fs-brand">
+        <img src="assets/spotify_logo.svg" alt="Spotify" style="height: 28px;" />
+        <span>Playing from Velankanni Matha Special</span>
+      </div>
+      <button class="fs-close-btn" id="fs-close-btn" title="Exit full screen">
+        <svg width="24" height="24" viewBox="0 0 16 16" fill="currentColor"><path d="M2.47 2.47a.75.75 0 0 1 1.06 0L8 6.94l4.47-4.47a.75.75 0 1 1 1.06 1.06L9.06 8l4.47 4.47a.75.75 0 1 1-1.06 1.06L8 9.06l-4.47 4.47a.75.75 0 0 1-1.06-1.06L6.94 8 2.47 3.53a.75.75 0 0 1 0-1.06z"/></svg>
+      </button>
+    </div>
+
+    <div class="fs-body">
+      <div class="fs-left">
+        <img src="assets/cover1.svg" alt="Cover" class="fs-cover-art" id="fs-cover-art" />
+        <div class="fs-song-details">
+          <h2 class="fs-title" id="fs-title">Umai Thedi Vanthen</h2>
+          <div class="fs-tamil" id="fs-tamil">உம்மைத் தேடி வந்தேன் சுமை தீருமம்மா</div>
+          <div class="fs-artist" id="fs-artist">Ave Maria Updates • Ulagazhum Thaaye</div>
+        </div>
+      </div>
+      <div class="fs-right" id="fs-lyrics-container">
+        <!-- Live synced lyrics rendered here -->
+      </div>
+    </div>
+
+    <div class="fs-bottom">
+      <div class="progress-container">
+        <span class="time-stamp" id="fs-current-time">0:00</span>
+        <div class="slider-wrapper" id="fs-progress-wrapper">
+          <div class="slider-track">
+            <div class="slider-fill" id="fs-progress-fill">
+              <div class="slider-thumb"></div>
+            </div>
+          </div>
+        </div>
+        <span class="time-stamp" id="fs-total-duration">5:20</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SPOTIFY CONNECT MODAL
+       ============================================================ -->
+  <div class="modal-backdrop" id="connect-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Connect to a device</h3>
+        <button class="panel-close-btn" id="close-connect-modal">✕</button>
+      </div>
+      <ul class="device-list">
+        <li class="device-item active">
+          <div class="device-info">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--sp-green)"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>
+            <div>
+              <div class="device-name">This Web Browser (Chrome)</div>
+              <div class="device-status">Spotify Connect • Listening now</div>
+            </div>
+          </div>
+          <svg width="20" height="20" viewBox="0 0 16 16" fill="var(--sp-green)"><path d="M12.78 4.22a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06 0l-3.25-3.25a.75.75 0 0 1 1.06-1.06L5.75 10.19l5.97-5.97a.75.75 0 0 1 1.06 0z"/></svg>
+        </li>
+        <li class="device-item">
+          <div class="device-info">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--sp-text-secondary)"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+            <div>
+              <div class="device-name">Android Smartphone</div>
+              <div class="device-status">Available on Wi-Fi</div>
+            </div>
+          </div>
+        </li>
+        <li class="device-item">
+          <div class="device-info">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--sp-text-secondary)"><path d="M19 12h-2V6h2v6zm-4 0h-2V3h2v9zm-4 0H9v-4h2v4zm-4 0H5v-2h2v2zm-4 0H1v-1h2v1zm18 4v2H1v-2h20zm0 4v1H1v-1h20z"/></svg>
+            <div>
+              <div class="device-name">Living Room Soundbar</div>
+              <div class="device-status">AirPlay / Bluetooth</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       KEYBOARD SHORTCUTS MODAL
+       ============================================================ -->
+  <div class="modal-backdrop" id="shortcuts-modal">
+    <div class="modal-content" style="width: 480px;">
+      <div class="modal-header">
+        <h3 class="modal-title">Keyboard Shortcuts</h3>
+        <button class="panel-close-btn" id="close-shortcuts-modal">✕</button>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px;">
+        <div style="display:flex; justify-content:space-between; color: var(--sp-text-secondary);">
+          <span>Play / Pause</span>
+          <kbd style="background:#333; padding:2px 8px; border-radius:4px; color:#fff;">Space</kbd>
+        </div>
+        <div style="display:flex; justify-content:space-between; color: var(--sp-text-secondary);">
+          <span>Seek Backward / Forward</span>
+          <kbd style="background:#333; padding:2px 8px; border-radius:4px; color:#fff;">← / →</kbd>
+        </div>
+        <div style="display:flex; justify-content:space-between; color: var(--sp-text-secondary);">
+          <span>Volume Up / Down</span>
+          <kbd style="background:#333; padding:2px 8px; border-radius:4px; color:#fff;">↑ / ↓</kbd>
+        </div>
+        <div style="display:flex; justify-content:space-between; color: var(--sp-text-secondary);">
+          <span>Next Track / Previous Track</span>
+          <kbd style="background:#333; padding:2px 8px; border-radius:4px; color:#fff;">N / P</kbd>
+        </div>
+        <div style="display:flex; justify-content:space-between; color: var(--sp-text-secondary);">
+          <span>Mute / Unmute</span>
+          <kbd style="background:#333; padding:2px 8px; border-radius:4px; color:#fff;">M</kbd>
+        </div>
+        <div style="display:flex; justify-content:space-between; color: var(--sp-text-secondary);">
+          <span>Save / Like Track</span>
+          <kbd style="background:#333; padding:2px 8px; border-radius:4px; color:#fff;">L</kbd>
+        </div>
+        <div style="display:flex; justify-content:space-between; color: var(--sp-text-secondary);">
+          <span>Toggle Full Screen</span>
+          <kbd style="background:#333; padding:2px 8px; border-radius:4px; color:#fff;">F</kbd>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Box -->
+  <div class="toast-container" id="toast">Added to your Liked Songs</div>
+
+  <!-- Main JavaScript File -->
+  <script src="app.js"></script>
+</body>
+</html>

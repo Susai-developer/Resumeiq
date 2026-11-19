@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2e1065"/>
+      <stop offset="50%" stop-color="#4c1d95"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <radialGradient id="moonGlow" cx="50%" cy="38%" r="45%">
+      <stop offset="0%" stop-color="#c084fc" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#2e1065" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#a855f7" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="500" height="500" fill="url(#bg2)"/>
+  <circle cx="250" cy="190" r="170" fill="url(#moonGlow)"/>
+
+  <!-- Crescent Moon and Stars -->
+  <g filter="url(#glow2)">
+    <!-- Crescent Moon -->
+    <path d="M 230 110 A 85 85 0 1 0 320 250 A 95 95 0 1 1 230 110 Z" fill="#fde047" opacity="0.95"/>
+    <!-- Halo ring around Mother Mary motif -->
+    <circle cx="240" cy="180" r="95" stroke="#e9d5ff" stroke-width="2" stroke-dasharray="5,5" fill="none" opacity="0.6"/>
+    <!-- Sacred Star of Bethlehem -->
+    <polygon points="310,130 316,145 332,145 319,155 324,170 310,160 296,170 301,155 288,145 304,145" fill="#ffffff"/>
+    <polygon points="170,140 174,150 186,150 176,158 180,170 170,162 160,170 164,158 154,150 166,150" fill="#fbcfe8" opacity="0.8"/>
+    <polygon points="210,90 213,98 222,98 214,104 217,112 210,107 203,112 206,104 198,98 207,98" fill="#fde047" opacity="0.9"/>
+  </g>
+
+  <!-- Devotional Lilies / Waves Silhouette -->
+  <path d="M 0 350 Q 125 320 250 350 T 500 350 L 500 500 L 0 500 Z" fill="#13082b" opacity="0.95"/>
+  <rect x="0" y="368" width="500" height="2" fill="#c084fc" opacity="0.6"/>
+
+  <text x="30" y="415" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="22" font-weight="800" fill="#ffffff" letter-spacing="0.5">
+    Mangala Nilave Maamari
+  </text>
+  <text x="30" y="445" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#e9d5ff">
+    மங்கள நிலவே மாமரி அன்னையே
+  </text>
+  <text x="30" y="475" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13" font-weight="500" fill="#a855f7">
+    Matha Devotional • Annaiye Aarokkiya Thaaye
+  </text>
+
+  <!-- Spotify style badge -->
+  <circle cx="450" cy="435" r="22" fill="#1ed760"/>
+  <polygon points="445,424 461,435 445,446" fill="#000000"/>
+</svg>
