@@ -1,6 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1134 340" width="100%" height="100%">
-  <path fill="#1ed760" d="M 170 340 C 76.1 340 0 263.9 0 170 C 0 76.1 76.1 0 170 0 C 263.9 0 340 76.1 340 170 C 340 263.9 263.9 340 170 340 Z"/>
-  <path fill="#000000" d="M 232.7 245.9 C 229.6 251 223.1 252.7 218 249.5 C 179.3 225.9 132.7 220.8 77.9 233.3 C 72.1 234.6 66.4 231 65.1 225.2 C 63.8 219.4 67.4 213.7 73.2 212.4 C 133.3 198.7 184.8 204.6 228.1 231 C 233.1 234.1 234.8 240.7 231.7 245.8 L 232.7 245.9 Z M 249.3 199.7 C 245.4 206 237.2 208 230.9 204.1 C 189 178.3 124.7 170.8 74.8 186 C 67.7 188.1 60.1 184.1 57.9 177 C 55.8 169.9 59.8 162.3 66.9 160.1 C 123.9 142.8 194.8 151.2 242.7 180.7 C 249 184.6 251 192.8 247.1 199.1 L 249.3 199.7 Z M 250.7 151.7 C 200 121.6 116.3 118.8 67.7 133.6 C 59.9 136 51.7 131.5 49.3 123.7 C 46.9 115.9 51.4 107.7 59.2 105.3 C 114.9 88.4 207.2 91.5 265.6 126.2 C 272.6 130.4 274.9 139.4 270.7 146.4 C 266.5 153.4 257.5 155.7 250.5 151.5 L 250.7 151.7 Z"/>
-  <!-- Spotify text -->
-  <text x="390" y="225" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="200" font-weight="800" fill="#ffffff" letter-spacing="-6">Spotify</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1150 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="spLgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e676"/>
+      <stop offset="50%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="spLgGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(30, 30)">
+    <circle cx="130" cy="130" r="128" fill="#0b171f" stroke="url(#spLgGrad)" stroke-width="8"/>
+    <g stroke="url(#spLgGrad)" stroke-linecap="round" opacity="0.9">
+      <path d="M 60 100 A 90 90 0 0 1 200 100" fill="none" stroke-width="8"/>
+      <path d="M 80 120 A 65 65 0 0 1 180 120" fill="none" stroke-width="7"/>
+    </g>
+    <rect x="123" y="70" width="14" height="120" rx="7" fill="url(#spLgGold)"/>
+    <rect x="85" y="100" width="90" height="14" rx="7" fill="url(#spLgGold)"/>
+    <circle cx="130" cy="107" r="12" fill="#ffffff"/>
+    <circle cx="130" cy="107" r="8" fill="#10b981"/>
+    <circle cx="130" cy="58" r="5" fill="#fde047"/>
+    <g fill="#34d399">
+      <rect x="85" y="205" width="7" height="16" rx="3.5"/>
+      <rect x="99" y="196" width="7" height="25" rx="3.5"/>
+      <rect x="113" y="186" width="7" height="35" rx="3.5"/>
+      <rect x="127" y="177" width="7" height="44" rx="3.5"/>
+      <rect x="141" y="186" width="7" height="35" rx="3.5"/>
+      <rect x="155" y="196" width="7" height="25" rx="3.5"/>
+      <rect x="169" y="205" width="7" height="16" rx="3.5"/>
+    </g>
+  </g>
+
+  <g transform="translate(330, 0)">
+    <text x="0" y="175" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="125" font-weight="900" fill="#ffffff" letter-spacing="-2">
+      AROKIYAM
+    </text>
+    <text x="5" y="228" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#10b981" letter-spacing="8">
+      SACRED DEVOTIONAL MUSIC
+    </text>
+  </g>
 </svg>

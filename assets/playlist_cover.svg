@@ -42,7 +42,7 @@
   <rect x="0" y="328" width="500" height="2" fill="#2dd4bf" opacity="0.7"/>
 
   <text x="35" y="375" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13" font-weight="700" fill="#2dd4bf" letter-spacing="3">
-    SPOTIFY PLAYLIST
+    AROKIYAM SPECIAL
   </text>
   <text x="35" y="415" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="28" font-weight="900" fill="url(#goldText)" letter-spacing="0.5">
     VELANKANNI MATHA
@@ -54,11 +54,9 @@
     வேளாங்கண்ணி ஆரோக்கிய மாதா பாடல் தொகுப்பு
   </text>
 
-  <!-- Spotify official green icon -->
+  <!-- Arokiyam official emblem badge -->
   <g transform="translate(435, 435)">
-    <circle cx="0" cy="0" r="24" fill="#1ed760"/>
-    <path d="M -13 -6 C -5 -9 6 -7 13 -3" stroke="#000" stroke-width="3" stroke-linecap="round" fill="none"/>
-    <path d="M -11 0 C -4 -3 5 -1 11 2" stroke="#000" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-    <path d="M -9 6 C -3 3 4 5 9 8" stroke="#000" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <circle cx="0" cy="0" r="24" fill="#10b981"/>
+    <polygon points="-5,-10 12,0 -5,10" fill="#ffffff"/>
   </g>
 </svg>
