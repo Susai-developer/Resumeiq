@@ -1,0 +1,44 @@
+/* AROKIYAM - login / signup styles (css/auth.css) */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%;overflow-x:hidden}
+body{font-family:'Plus Jakarta Sans','Noto Sans Tamil',system-ui,sans-serif;background:linear-gradient(160deg,#0a3fb0,#1d6fe8 55%,#38a9f5);color:#0b1f4d;-webkit-font-smoothing:antialiased}
+.auth{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;max-width:460px;margin:0 auto;position:relative}
+.auth-top{text-align:center;color:#fff;padding:44px 20px 54px;position:relative;width:100%}
+.auth-top .mark{width:92px;height:auto;display:block;margin:0 auto 4px}
+.auth-top h1{font-size:30px;font-weight:700;letter-spacing:.5px}
+.auth-top p{font-size:14px;opacity:.92;margin-top:2px}
+.note{position:absolute;top:50px;font-style:normal;font-size:44px;color:rgba(255,255,255,.35)}
+.n1{left:26px;transform:rotate(-12deg)}.n2{right:26px;transform:rotate(10deg)}
+.sheet{background:#fff;width:100%;flex:1;border-radius:36px 36px 0 0;padding:30px 24px calc(28px + env(safe-area-inset-bottom));box-shadow:0 -10px 40px rgba(2,20,80,.25)}
+.sheet h2{text-align:center;font-size:24px;font-weight:800}
+.sub{text-align:center;color:#51608a;font-size:14px;margin:4px 0 22px}
+.field{margin-bottom:12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.box{display:flex;align-items:center;gap:10px;border:1.5px solid #d4def4;border-radius:14px;padding:0 12px;background:#f7f9ff;transition:.2s}
+.box:focus-within{border-color:#1d6fe8;box-shadow:0 0 0 4px rgba(29,111,232,.14);background:#fff}
+.invalid .box{border-color:#e5484d;background:#fff6f6}
+.ic{width:20px;height:20px;fill:#1d4fb8;flex:none}
+.box input{flex:1;min-width:0;border:0;outline:0;background:transparent;font:inherit;font-size:15px;color:#0b1f4d;padding:15px 0}
+.box input::placeholder{color:#7a89ad}
+.eye{border:0;background:none;cursor:pointer;display:grid;place-items:center;padding:6px;border-radius:50%}
+.eye svg{width:20px;height:20px;fill:#6b7ba3}.eye.on svg{fill:#1d6fe8}
+.err{display:block;color:#d92d33;font-size:12px;min-height:0;margin:4px 4px 0}
+.err:empty{display:none}
+.primary{width:100%;border:0;border-radius:999px;padding:15px;margin-top:6px;font:inherit;font-weight:700;font-size:16px;color:#fff;cursor:pointer;background:linear-gradient(90deg,#0b55d8,#1d7cf2);box-shadow:0 8px 20px rgba(11,85,216,.35);transition:.2s}
+.primary:hover{transform:translateY(-1px)}.primary:disabled{opacity:.7;cursor:wait;transform:none}
+.forgot{display:block;text-align:center;margin-top:14px;font-size:13px;font-weight:600;color:#0b55d8;text-decoration:none}
+.or{display:flex;align-items:center;gap:12px;color:#6b7ba3;font-size:13px;margin:16px 0}
+.or:before,.or:after{content:"";flex:1;height:1px;background:#dbe4f7}
+.social{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:13px;margin-bottom:10px;border:1.5px solid #d4def4;border-radius:999px;background:#fff;font:inherit;font-weight:600;font-size:14.5px;color:#0b1f4d;cursor:pointer}
+.social:hover{background:#f3f7ff}
+.switch{text-align:center;margin-top:14px;font-size:13.5px;color:#51608a}
+.switch a{color:#0b55d8;font-weight:700;text-decoration:none}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);opacity:0;background:#0a1f55;color:#fff;padding:12px 18px;border-radius:12px;font-size:14px;max-width:90vw;text-align:center;pointer-events:none;transition:.3s;z-index:60}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.modal{position:fixed;inset:0;background:rgba(3,14,50,.6);display:none;align-items:center;justify-content:center;padding:18px;z-index:50}
+.modal.open{display:flex}
+.modal .card{background:#fff;border-radius:22px;padding:26px 22px;width:100%;max-width:400px;position:relative}
+.modal h3{text-align:center;font-size:20px}
+.modal .x{position:absolute;right:12px;top:8px;border:0;background:none;font-size:28px;color:#6b7ba3;cursor:pointer}
+.note-small{font-size:11.5px;color:#6b7ba3;text-align:center;margin-top:12px;line-height:1.4}
+@media(min-width:700px){body{display:grid;place-items:center;padding:30px}.auth{min-height:auto;border-radius:32px;overflow:hidden;box-shadow:0 30px 80px rgba(0,10,60,.5);background:#fff}.sheet{box-shadow:none}}
